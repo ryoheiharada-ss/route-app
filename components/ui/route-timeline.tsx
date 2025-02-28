@@ -92,7 +92,7 @@ export function RouteTimeline({ route, routeData }: RouteTimelineProps) {
   const { totalFare, hasSuperexpress } = calculateTotalFare(route.sections);
 
   return (
-    <Card className="w-full max-w-md mx-auto">
+    <Card className="w-full mx-auto">
       <CardHeader className="bg-primary text-primary-foreground p-4 rounded-t-lg">
         <div className="space-y-2">
           <div className="flex items-center justify-between">

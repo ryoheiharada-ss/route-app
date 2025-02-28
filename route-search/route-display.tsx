@@ -15,7 +15,26 @@ interface RouteDisplayProps {
 }
 
 export function RouteDisplay({ routeData, routeResult }: RouteDisplayProps) {
-  // APIからのレスポンスがある場合はそれを使用し、ない場合はサンプルデータを使用
-  const route = routeResult?.items[0] ?? require('./route.json').items[0]
-  return <RouteTimeline route={route} routeData={routeData} />
+  // サンプルデータを使用する場合は1つの経路を3回複製
+  const routes = routeResult?.items ?? [require('./route.json').items[0]].concat(
+    Array(2).fill(require('./route.json').items[0])
+  );
+
+  return (
+    <div className="w-full overflow-x-auto">
+      <div className="inline-flex gap-6 px-4 min-w-fit">
+        {routes.map((route, index) => (
+          <div key={index} className="relative w-[360px]">
+            <div className="absolute -top-6 left-2 text-sm font-medium text-muted-foreground">
+              経路{index + 1}
+            </div>
+            <RouteTimeline 
+              route={route} 
+              routeData={routeData}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

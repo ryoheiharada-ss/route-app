@@ -62,7 +62,7 @@ export default function RoutePage() {
   if (error) return <div className="min-h-screen p-4 text-red-500">{error}</div>
 
   return (
-    <div className="min-h-screen p-4">
+    <div className="min-h-screen p-4 pt-8">
       <RouteDisplay 
         routeData={routeData} 
         routeResult={routeResult} 
