@@ -21,19 +21,21 @@ export function RouteDisplay({ routeData, routeResult }: RouteDisplayProps) {
   );
 
   return (
-    <div className="w-full overflow-x-auto">
-      <div className="inline-flex gap-6 px-4 min-w-fit">
-        {routes.map((route, index) => (
-          <div key={index} className="relative w-[360px]">
-            <div className="absolute -top-6 left-2 text-sm font-medium text-muted-foreground">
-              経路{index + 1}
+    <div className="w-full flex justify-center">
+      <div className="w-full overflow-x-auto flex justify-center">
+        <div className="flex gap-6 px-4">
+          {routes.map((route, index) => (
+            <div key={index} className="relative w-[360px]">
+              <div className="absolute -top-6 left-2 text-sm font-medium text-muted-foreground">
+                経路{index + 1}
+              </div>
+              <RouteTimeline 
+                route={route} 
+                routeData={routeData}
+              />
             </div>
-            <RouteTimeline 
-              route={route} 
-              routeData={routeData}
-            />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

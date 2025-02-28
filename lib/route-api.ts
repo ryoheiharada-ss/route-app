@@ -62,7 +62,7 @@ export async function searchRoute(params: RouteSearchParams) {
     goal: `${params.goal.lat},${params.goal.lng}`,
     datum: 'wgs84',
     term: '1440',
-    limit: '3',
+    limit: '1',
     coord_unit: 'degree',
     goal_time: formatJSTDateTime(params.goalTime)  // 日本時間として処理
   });
