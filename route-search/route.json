@@ -1,0 +1,307 @@
+{
+  "items": [
+    {
+      "summary": {
+        "no": "1",
+        "start": {
+          "type": "point",
+          "coord": {
+            "lat": 35.656732,
+            "lon": 139.699681
+          },
+          "name": "start"
+        },
+        "goal": {
+          "type": "point",
+          "coord": {
+            "lat": 34.73347,
+            "lon": 135.49768
+          },
+          "name": "goal"
+        },
+        "move": {
+          "transit_count": 1,
+          "walk_distance": 956,
+          "fare": {
+            "unit_1": 4960.0,
+            "unit_2": 5810.0,
+            "unit_0": 8910.0,
+            "unit_3": 10680.0
+          },
+          "type": "move",
+          "from_time": "2025-03-13T08:47:00+09:00",
+          "to_time": "2025-03-13T12:00:00+09:00",
+          "time": 193,
+          "distance": 553956,
+          "move_type": [
+            "local_train",
+            "superexpress_train",
+            "walk"
+          ]
+        }
+      },
+      "sections": [
+        {
+          "type": "point",
+          "coord": {
+            "lat": 35.656732,
+            "lon": 139.699681
+          },
+          "name": "start"
+        },
+        {
+          "type": "move",
+          "move": "walk",
+          "from_time": "2025-03-13T08:47:00+09:00",
+          "to_time": "2025-03-13T08:53:00+09:00",
+          "time": 6,
+          "distance": 438,
+          "line_name": "徒歩"
+        },
+        {
+          "type": "point",
+          "coord": {
+            "lat": 35.657119,
+            "lon": 139.702303
+          },
+          "name": "渋谷",
+          "node_id": "00003544",
+          "node_types": [
+            "station"
+          ],
+          "gateway": "新南口",
+          "numbering": {
+            "departure": [
+              {
+                "symbol": "JY",
+                "number": "20"
+              }
+            ]
+          }
+        },
+        {
+          "type": "move",
+          "next_transit": true,
+          "transport": {
+            "getoff": "前",
+            "color": "#80C241",
+            "name": "ＪＲ山手線",
+            "company": {
+              "id": "00000004",
+              "name": "ＪＲ東日本"
+            },
+            "links": [
+              {
+                "id": "00000141",
+                "name": "ＪＲ山手線",
+                "direction": "up",
+                "destination": {
+                  "id": "00007825",
+                  "name": "品川"
+                },
+                "from": {
+                  "id": "00003544",
+                  "name": "渋谷"
+                },
+                "to": {
+                  "id": "00007825",
+                  "name": "品川"
+                },
+                "is_timetable": "false"
+              }
+            ],
+            "id": "00000330",
+            "type": "普通",
+            "fare_break": {
+              "unit_0": false,
+              "unit_254": false
+            }
+          },
+          "move": "local_train",
+          "from_time": "2025-03-13T08:55:00+09:00",
+          "to_time": "2025-03-13T09:07:00+09:00",
+          "time": 12,
+          "distance": 7200,
+          "line_name": "ＪＲ山手線",
+          "transfer_seconds": 600
+        },
+        {
+          "type": "point",
+          "coord": {
+            "lat": 35.628431,
+            "lon": 139.73903
+          },
+          "name": "品川",
+          "node_id": "00007825",
+          "node_types": [
+            "station"
+          ],
+          "numbering": {
+            "arrival": [
+              {
+                "symbol": "JY",
+                "number": "25"
+              }
+            ]
+          }
+        },
+        {
+          "type": "move",
+          "transport": {
+            "fare": {
+              "unit_0": 8910.0,
+              "unit_254": 0.0,
+              "unit_2": 5810.0,
+              "unit_1": 4960.0,
+              "unit_3": 10680.0
+            },
+            "getoff": "中",
+            "color": "#0000FF",
+            "name": "のぞみ（東海道）",
+            "fare_season": "normal",
+            "company": {
+              "id": "00000003",
+              "name": "ＪＲ東海"
+            },
+            "links": [
+              {
+                "id": "00000110",
+                "name": "ＪＲ東海道新幹線",
+                "direction": "down",
+                "destination": {
+                  "id": "00008576",
+                  "name": "名古屋"
+                },
+                "from": {
+                  "id": "00007825",
+                  "name": "品川"
+                },
+                "to": {
+                  "id": "00004305",
+                  "name": "新大阪"
+                },
+                "is_timetable": "false"
+              }
+            ],
+            "id": "00000004",
+            "type": "新幹線",
+            "fare_break": {
+              "unit_0": true,
+              "unit_254": true,
+              "unit_2": true,
+              "unit_1": true,
+              "unit_3": true
+            },
+            "fare_detail": [
+              {
+                "start": {
+                  "name": "渋谷",
+                  "node_id": "00003544"
+                },
+                "id": "0",
+                "goal": {
+                  "name": "新大阪",
+                  "node_id": "00004305"
+                },
+                "fare": 8910.0
+              },
+              {
+                "start": {
+                  "name": "渋谷",
+                  "node_id": "00003544"
+                },
+                "id": "254",
+                "goal": {
+                  "name": "新大阪",
+                  "node_id": "00004305"
+                },
+                "fare": 0.0
+              },
+              {
+                "start": {
+                  "name": "品川",
+                  "node_id": "00007825"
+                },
+                "id": "2",
+                "goal": {
+                  "name": "新大阪",
+                  "node_id": "00004305"
+                },
+                "fare": 5810.0
+              },
+              {
+                "start": {
+                  "name": "品川",
+                  "node_id": "00007825"
+                },
+                "id": "1",
+                "goal": {
+                  "name": "新大阪",
+                  "node_id": "00004305"
+                },
+                "fare": 4960.0,
+                "default_extra_fare": true
+              },
+              {
+                "start": {
+                  "name": "品川",
+                  "node_id": "00007825"
+                },
+                "id": "3",
+                "goal": {
+                  "name": "新大阪",
+                  "node_id": "00004305"
+                },
+                "fare": 10680.0
+              }
+            ]
+          },
+          "move": "superexpress_train",
+          "from_time": "2025-03-13T09:27:00+09:00",
+          "to_time": "2025-03-13T11:54:00+09:00",
+          "time": 147,
+          "distance": 545800,
+          "line_name": "のぞみ（東海道）"
+        },
+        {
+          "type": "point",
+          "coord": {
+            "lat": 34.732723,
+            "lon": 135.498042
+          },
+          "name": "新大阪",
+          "node_id": "00004305",
+          "node_types": [
+            "station",
+            "shuttle_busstop"
+          ],
+          "gateway": "6番口"
+        },
+        {
+          "type": "move",
+          "move": "walk",
+          "from_time": "2025-03-13T11:54:00+09:00",
+          "to_time": "2025-03-13T12:00:00+09:00",
+          "time": 6,
+          "distance": 518,
+          "line_name": "徒歩"
+        },
+        {
+          "type": "point",
+          "coord": {
+            "lat": 34.73347,
+            "lon": 135.49768
+          },
+          "name": "goal"
+        }
+      ]
+    }
+  ],
+  "unit": {
+    "datum": "wgs84",
+    "coord_unit": "degree",
+    "distance": "metre",
+    "time": "minute",
+    "currency": "JPY"
+  }
+}
