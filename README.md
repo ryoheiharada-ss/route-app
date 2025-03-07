@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ルート取得アプリケーション
 
-## Getting Started
+## 使用技術スタック
 
-First, run the development server:
+- **フレームワーク**: Next.js
+- **APIインテグレーション**:
+    - Google Maps API
+    - NAVITIME Route API (via RapidAPI)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 主要機能
+
+### 1. 座標取得機能
+
+- **Google Maps APIの利用**
+    - 出発地・目的地の座標（緯度・経度）の取得
+
+### 2. 経路検索機能
+
+- **NAVITIME Route APIとの連携**
+    - 出発地・目的地の座標（緯度・経度）
+    - 到着希望時刻を指定した経路検索
+    - 複数の経路候補の取得（limit: 3）
+    - 日本時間(JST)での時刻処理
+
+## データフロー
+
+```mermaid
+graph LR
+    A[ユーザー入力] --> B[Next.js フロントエンド]
+    B --> C[Google Maps API]
+    B --> D[NAVITIME Route API]
+    C --> B
+    D --> B
+    B --> E[ユーザー画面表示]
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## エラーハンドリング
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- APIリクエストのエラー処理
+- デバッグログの出力
+- エラーレスポンスの詳細取得
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## セキュリティ
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- API Keyの環境変数での管理
